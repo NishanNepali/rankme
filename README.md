@@ -1,6 +1,6 @@
 # RankMe
 
-![RankMe Logo](http://rankme.rf.gd/home.php/imgs/logo-old.png)
+![RankMe Logo](https://drive.google.com/file/d/1X_r7oGeRJqJ5IjQXQcx9ccF4crRNOlTi/view?usp=drive_link)
 
 **RankMe** is a feature-rich web platform that enables users to rank themselves based on upvotes and downvotes received on their content. It offers various social networking features, including leaderboards, a messaging system, friend requests, post uploading, post liking, and commenting. Whether you want to see how popular your content is or connect with like-minded individuals, RankMe has you covered.
 

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Lazy Load Styles */
+.card-image {
+  display: block;
+  min-height: 20rem; /* layout hack */
+  background: #fff center center no-repeat;
+  background-size: cover;
+  filter: blur(3px); /* blur the lowres image */
+}
+
+.card-image > img {
+  display: block;
+  width: 100%;
+  opacity: 0; /* visually hide the img element */
+}
+
+.card-image.is-loaded {
+  filter: none; /* remove the blur on fullres image */
+  transition: filter 1s;
+}
+
+
+
+
+/* Layout Styles */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.card-list {
+  display: block;
+  margin: 1rem auto;
+  padding: 0;
+  font-size: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.card {
+  display: inline-block;
+  width: 90%;
+  max-width: 20rem;
+  margin: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem) scale(1.0125);
+  box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+}
+
+.card-description {
+  display: block;
+  padding: 1em 0.5em;
+  color: #515151;
+  text-decoration: none;
+}
+
+.card-description > h2 {
+  margin: 0 0 0.5em;
+}
+    </style>
+</head>
+<body>
+
+    <style>
+        top {
+  background-color: #ff96fa;
+  padding: 20px;
+  display: flex;
+ 
+ 
+
+}
+
+.header {
+  color: #fff;
+  margin: 0;
+}
+
+.logo {
+  height: 55px;
+  vertical-align: middle;
+ 
+}
+
+
+
+    </style>
+    <div class="top">
+        <div class="header">
+        <a href="../index.php" onclick="goBack(event);">
+        <img class="logo" src="../imgs/logo.png" alt="">
+      </a>
+      
+      </div>
+      <script>
+        function goBack(event) {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.which === 2) {
+            return; // Ignore the click if it involves a modifier key or mouse middle button
+          }
+      
+          if (window.history.length > 1) {
+            event.preventDefault(); // Prevent the default link behavior
+            history.back(); // Redirects the user to the previous page
+          }
+        }
+      </script>
+
+</div>
+
+    <ul class="card-list">
+  
+        <li class="card">
+          <a class="card-image" href="space.html" target="_self" style="background-image: url(https://theplanets.org/123/2020/09/Elite-Dangerous.jpg);" data-image-full="https://theplanets.org/123/2020/09/Elite-Dangerous.jpg">
+            <img src="https://theplanets.org/123/2020/09/Elite-Dangerous.jpg" alt="Psychopomp" />
+          </a>
+          <a class="card-description" href="space.html" target="_blank">
+            <h2>Space Gun</h2>
+            <p>The Space game</p>
+          </a>
+        </li>
+        
+        <li class="card">
+          <a class="card-image" href="dianosorus.html" target="_self" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEX///8AAADU1NSdnZ2blZVaWlrs6urS0NC3s7NKSkrZ2dldXV2zs7OhoaGXl5eWj484ODiEhIT19fVSUlKhm5usp6fIxcXw7+9TU1O5tLQfHx93b38NAAAEy0lEQVR4nO2d64KqIBRGyxtGpdNlaua8/4Me0XQkUMAbl771q6Mpe43KBoTObgcAAAAAAAAAAAAAAAAAgKApk6QktoNYleR+T4I1pHme/94rvvOap+2AFock96RHmdkOaGEo+b1/E56wHPPqCub8lsCqnLx6/B78luTxDOlZzIUqNL+/X1W/+RUNq+rGZ0NSJhzvabCs69Ks9Ld2Dd3wkZOM49l7Dlnqz7NGh/vSI6fWIjZFzAS9LezylnpHuQoh30K9Qv/ye8ayvew4sb51lVJ46vTwxTB7Jvdc+URlIk9PDDN2BdVtlbeqVlrfOkpWBapR78sMPekcZ0nS+1cuE0kG6lJPyMp+9CEaVnUIy+ivmuYpqVFq7MY4l/CHm5oevD8tsGmQ0ueekQ70rUcPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJyCRHv7Oud1rUtgOdDK6hrHtQCcDw5az7UCncLql6VHX8OuYpgfbEZsS69p12I7YlM7weI7jc9CG9TMWtGFdT8LQa8Pw71JtbEdsCgxh6D4whKH7wBCG7gNDGLoPDC0bRtF17ilGDNnImsi2Y237fTT3FCOGLoyO7vezf/hixNCFEW4Wx8y3JR4YzoxjZIjUjbt00PCQpreT4vDqO8cvzZrG0mD+iKHO5R2Wk7B48Fr0NE5xHJ/ku0YP98fwp/p4k+8aPdwXQ0IP1cdUtktOFkURHfERkr3t57AJy8CwcPKKiUw3VDVHVw5cm483HEnZqnehKweujcJw4LW7ItH7ZDgQq0IOhivw3lzhYw3BkDVXfqR7dAxpf8adKtFzRzG2+HHJprlyoLKydAwZXR9SleitXMyxsnQNu8To5LgTDHUMu9SvNenJR8O2t65M9B1VTUMvHhmaw05xDt4wXtewiOOCBG3Izl7YNWSTa9fq2l+bhgc/mW5zwzWJmmK0DHsz7gI17BG+4ftoYmiGF9p/EUXalO2dIa0quFurwgUljjuZt9GcMGQf2/eivZAusdi9Mm9n2zck8WXAUPaq1EfDVw+2b9i0qm8yQ6P1MB2bLIwZNIxFQ9V7TGPDTV6Mmhgu+oJJ54SLAMNVDTdZKLqkoVHqp1st9l3SkKGd+tcSEngZ8gt12D8mGmonxrWEBLKi/qvzSwJ7ofpvuJNVEL1QTQ11Uv/mK2APx3/LGXZfHsHCDKj3PzrbtqKhhVlsB4nhOSjDkcBgKEVM/bS/xSVD2s19No6MT/3cFpcM+X1GkcXCifiVzlbo4qnSf03B7wvIcGDfNMMuv3eNgdAM+fzutqFRW+Q8bGhvVrfKMGg+xPBCB3+aS6DJ78IB1PQ8i/I3g0mMYOJzKL/b3X0OzevSBc6zKFsZunkNU42FMRxxe7u/BtTYR7rrnmc7/wn0mKExXcZ/Nf1u+/q96qJlGLOO4everqc9emRI2NdG77SBdvYcQ3WhKgxKr4dZR1eVdvNL+aH7OYbqQlUYlH5lSXJ0ZXDWplJ+6L79dc8pl0JdqIo5pQPw6RDheQ4NsU4OjfANwQey5qRjNyisNe63ghTciD0A4IPQ6aSTDevA5cvS6aRH204IW/iMOp3064Yd8C3LAgAAALzlcjB6o7goOj/0t0ApFse/thl9OxX2Gj3dEnsAQDj8B0h+NSl215RzAAAAAElFTkSuQmCC);" data-image-full="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEX///8AAADU1NSdnZ2blZVaWlrs6urS0NC3s7NKSkrZ2dldXV2zs7OhoaGXl5eWj484ODiEhIT19fVSUlKhm5usp6fIxcXw7+9TU1O5tLQfHx93b38NAAAEy0lEQVR4nO2d64KqIBRGyxtGpdNlaua8/4Me0XQkUMAbl771q6Mpe43KBoTObgcAAAAAAAAAAAAAAAAAgKApk6QktoNYleR+T4I1pHme/94rvvOap+2AFock96RHmdkOaGEo+b1/E56wHPPqCub8lsCqnLx6/B78luTxDOlZzIUqNL+/X1W/+RUNq+rGZ0NSJhzvabCs69Ks9Ld2Dd3wkZOM49l7Dlnqz7NGh/vSI6fWIjZFzAS9LezylnpHuQoh30K9Qv/ye8ayvew4sb51lVJ46vTwxTB7Jvdc+URlIk9PDDN2BdVtlbeqVlrfOkpWBapR78sMPekcZ0nS+1cuE0kG6lJPyMp+9CEaVnUIy+ivmuYpqVFq7MY4l/CHm5oevD8tsGmQ0ueekQ70rUcPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJyCRHv7Oud1rUtgOdDK6hrHtQCcDw5az7UCncLql6VHX8OuYpgfbEZsS69p12I7YlM7weI7jc9CG9TMWtGFdT8LQa8Pw71JtbEdsCgxh6D4whKH7wBCG7gNDGLoPDC0bRtF17ilGDNnImsi2Y237fTT3FCOGLoyO7vezf/hixNCFEW4Wx8y3JR4YzoxjZIjUjbt00PCQpreT4vDqO8cvzZrG0mD+iKHO5R2Wk7B48Fr0NE5xHJ/ku0YP98fwp/p4k+8aPdwXQ0IP1cdUtktOFkURHfERkr3t57AJy8CwcPKKiUw3VDVHVw5cm483HEnZqnehKweujcJw4LW7ItH7ZDgQq0IOhivw3lzhYw3BkDVXfqR7dAxpf8adKtFzRzG2+HHJprlyoLKydAwZXR9SleitXMyxsnQNu8To5LgTDHUMu9SvNenJR8O2t65M9B1VTUMvHhmaw05xDt4wXtewiOOCBG3Izl7YNWSTa9fq2l+bhgc/mW5zwzWJmmK0DHsz7gI17BG+4ftoYmiGF9p/EUXalO2dIa0quFurwgUljjuZt9GcMGQf2/eivZAusdi9Mm9n2zck8WXAUPaq1EfDVw+2b9i0qm8yQ6P1MB2bLIwZNIxFQ9V7TGPDTV6Mmhgu+oJJ54SLAMNVDTdZKLqkoVHqp1st9l3SkKGd+tcSEngZ8gt12D8mGmonxrWEBLKi/qvzSwJ7ofpvuJNVEL1QTQ11Uv/mK2APx3/LGXZfHsHCDKj3PzrbtqKhhVlsB4nhOSjDkcBgKEVM/bS/xSVD2s19No6MT/3cFpcM+X1GkcXCifiVzlbo4qnSf03B7wvIcGDfNMMuv3eNgdAM+fzutqFRW+Q8bGhvVrfKMGg+xPBCB3+aS6DJ78IB1PQ8i/I3g0mMYOJzKL/b3X0OzevSBc6zKFsZunkNU42FMRxxe7u/BtTYR7rrnmc7/wn0mKExXcZ/Nf1u+/q96qJlGLOO4everqc9emRI2NdG77SBdvYcQ3WhKgxKr4dZR1eVdvNL+aH7OYbqQlUYlH5lSXJ0ZXDWplJ+6L79dc8pl0JdqIo5pQPw6RDheQ4NsU4OjfANwQey5qRjNyisNe63ghTciD0A4IPQ6aSTDevA5cvS6aRH204IW/iMOp3064Yd8C3LAgAAALzlcjB6o7goOj/0t0ApFse/thl9OxX2Gj3dEnsAQDj8B0h+NSl215RzAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEX///8AAADU1NSdnZ2blZVaWlrs6urS0NC3s7NKSkrZ2dldXV2zs7OhoaGXl5eWj484ODiEhIT19fVSUlKhm5usp6fIxcXw7+9TU1O5tLQfHx93b38NAAAEy0lEQVR4nO2d64KqIBRGyxtGpdNlaua8/4Me0XQkUMAbl771q6Mpe43KBoTObgcAAAAAAAAAAAAAAAAAgKApk6QktoNYleR+T4I1pHme/94rvvOap+2AFock96RHmdkOaGEo+b1/E56wHPPqCub8lsCqnLx6/B78luTxDOlZzIUqNL+/X1W/+RUNq+rGZ0NSJhzvabCs69Ks9Ld2Dd3wkZOM49l7Dlnqz7NGh/vSI6fWIjZFzAS9LezylnpHuQoh30K9Qv/ye8ayvew4sb51lVJ46vTwxTB7Jvdc+URlIk9PDDN2BdVtlbeqVlrfOkpWBapR78sMPekcZ0nS+1cuE0kG6lJPyMp+9CEaVnUIy+ivmuYpqVFq7MY4l/CHm5oevD8tsGmQ0ueekQ70rUcPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJyCRHv7Oud1rUtgOdDK6hrHtQCcDw5az7UCncLql6VHX8OuYpgfbEZsS69p12I7YlM7weI7jc9CG9TMWtGFdT8LQa8Pw71JtbEdsCgxh6D4whKH7wBCG7gNDGLoPDC0bRtF17ilGDNnImsi2Y237fTT3FCOGLoyO7vezf/hixNCFEW4Wx8y3JR4YzoxjZIjUjbt00PCQpreT4vDqO8cvzZrG0mD+iKHO5R2Wk7B48Fr0NE5xHJ/ku0YP98fwp/p4k+8aPdwXQ0IP1cdUtktOFkURHfERkr3t57AJy8CwcPKKiUw3VDVHVw5cm483HEnZqnehKweujcJw4LW7ItH7ZDgQq0IOhivw3lzhYw3BkDVXfqR7dAxpf8adKtFzRzG2+HHJprlyoLKydAwZXR9SleitXMyxsnQNu8To5LgTDHUMu9SvNenJR8O2t65M9B1VTUMvHhmaw05xDt4wXtewiOOCBG3Izl7YNWSTa9fq2l+bhgc/mW5zwzWJmmK0DHsz7gI17BG+4ftoYmiGF9p/EUXalO2dIa0quFurwgUljjuZt9GcMGQf2/eivZAusdi9Mm9n2zck8WXAUPaq1EfDVw+2b9i0qm8yQ6P1MB2bLIwZNIxFQ9V7TGPDTV6Mmhgu+oJJ54SLAMNVDTdZKLqkoVHqp1st9l3SkKGd+tcSEngZ8gt12D8mGmonxrWEBLKi/qvzSwJ7ofpvuJNVEL1QTQ11Uv/mK2APx3/LGXZfHsHCDKj3PzrbtqKhhVlsB4nhOSjDkcBgKEVM/bS/xSVD2s19No6MT/3cFpcM+X1GkcXCifiVzlbo4qnSf03B7wvIcGDfNMMuv3eNgdAM+fzutqFRW+Q8bGhvVrfKMGg+xPBCB3+aS6DJ78IB1PQ8i/I3g0mMYOJzKL/b3X0OzevSBc6zKFsZunkNU42FMRxxe7u/BtTYR7rrnmc7/wn0mKExXcZ/Nf1u+/q96qJlGLOO4everqc9emRI2NdG77SBdvYcQ3WhKgxKr4dZR1eVdvNL+aH7OYbqQlUYlH5lSXJ0ZXDWplJ+6L79dc8pl0JdqIo5pQPw6RDheQ4NsU4OjfANwQey5qRjNyisNe63ghTciD0A4IPQ6aSTDevA5cvS6aRH204IW/iMOp3064Yd8C3LAgAAALzlcjB6o7goOj/0t0ApFse/thl9OxX2Gj3dEnsAQDj8B0h+NSl215RzAAAAAElFTkSuQmCC" alt="let's go" />
+          </a>
+          <a class="card-description" href="dianosorus.html" target="_blank">
+            <h2>Chrome game</h2>
+            <p>Chrome game</p>
+          </a>
+        </li>
+        
+        <li class="card">
+          <a class="card-image" href="logo.html" target="_self" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipjuVcETPKR5c0pYQhvPOIf7tL1o-OlZZESVRoTSl-wgGqCqopemEHFBYbO7aatWzhX_om8IImIQPsNgne_AKXF9DIspOZ8eOf3e9RoZr9w-MoGHeHm2QKYNndqR6BfpjS_ptKUt4eZSwpC_sRMbUO3vf9d88opaU-IZBeHwkeCxzixawf5eil-iCnTA/s1600/Answers%20Logo%20Quiz.jpg);" data-image-full="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipjuVcETPKR5c0pYQhvPOIf7tL1o-OlZZESVRoTSl-wgGqCqopemEHFBYbO7aatWzhX_om8IImIQPsNgne_AKXF9DIspOZ8eOf3e9RoZr9w-MoGHeHm2QKYNndqR6BfpjS_ptKUt4eZSwpC_sRMbUO3vf9d88opaU-IZBeHwkeCxzixawf5eil-iCnTA/s1600/Answers%20Logo%20Quiz.jpg">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipjuVcETPKR5c0pYQhvPOIf7tL1o-OlZZESVRoTSl-wgGqCqopemEHFBYbO7aatWzhX_om8IImIQPsNgne_AKXF9DIspOZ8eOf3e9RoZr9w-MoGHeHm2QKYNndqR6BfpjS_ptKUt4eZSwpC_sRMbUO3vf9d88opaU-IZBeHwkeCxzixawf5eil-iCnTA/s1600/Answers%20Logo%20Quiz.jpg" alt="The Beautiful Game" />
+          </a>
+          <a class="card-description" href="logo.html" target="_blank">
+            <h2>The Beautiful Game</h2>
+            <p>The logo game</p>
+          </a>
+        </li>
+        
+        <li class="card">
+          <a class="card-image" href="snake.html" target="_self" style="background-image: url(https://im.indiatimes.in/facebook/2018/Aug/snake_game_1533210438.jpg?w=820&h=540&cc=1);" data-image-full="https://im.indiatimes.in/facebook/2018/Aug/snake_game_1533210438.jpg?w=820&h=540&cc=1">
+            <img src="https://im.indiatimes.in/facebook/2018/Aug/snake_game_1533210438.jpg?w=820&h=540&cc=1" alt="Jane Doe" />
+          </a>
+          <a class="card-description" href="snake.html" target="_blank">
+            <h2>Snake Game</h2>
+            <p>The snake game</p>
+          </a>
+        </li>
+        
+      </ul>
+      <script>
+        // This is "probably" IE9 compatible but will need some fallbacks for IE8
+// - (event listeners, forEach loop)
+
+// wait for the entire page to finish loading
+window.addEventListener('load', function() {
+  
+  // setTimeout to simulate the delay from a real page load
+  setTimeout(lazyLoad, 1000);
+  
+});
+
+function lazyLoad() {
+  var card_images = document.querySelectorAll('.card-image');
+  
+  // loop over each card image
+  card_images.forEach(function(card_image) {
+    var image_url = card_image.getAttribute('data-image-full');
+    var content_image = card_image.querySelector('img');
+    
+    // change the src of the content image to load the new high res photo
+    content_image.src = image_url;
+    
+    // listen for load event when the new photo is finished loading
+    content_image.addEventListener('load', function() {
+      // swap out the visible background image with the new fully downloaded photo
+      card_image.style.backgroundImage = 'url(' + image_url + ')';
+      // add a class to remove the blur filter to smoothly transition the image change
+      card_image.className = card_image.className + ' is-loaded';
+    });
+    
+  });
+  
+}
+
+      </script>
+</body>
+</html>

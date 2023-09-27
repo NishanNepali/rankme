@@ -11,11 +11,11 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 270px;
 }
 .container {
   border-radius: 50%;
-  height: 312px;
+  height: 311px;
   -webkit-tap-highlight-color: transparent;
   transform: scale(0.48);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);

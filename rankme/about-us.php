@@ -1,3 +1,8 @@
+<?php
+
+// It is a about us file I think it isn't use in the project
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -228,11 +228,6 @@ CREATE TABLE `votes` (
 -- Dumping data for table `votes`
 --
 
-INSERT INTO `votes` (`voter_id`, `profile_owner_id`, `vote_type`, `id`) VALUES
-(228745, 629873, 'upvote', 256),
-(275868, 275868, 'upvote', 257),
-(629873, 629873, 'upvote', 258),
-(308308, 629873, 'upvote', 259);
 
 --
 -- Indexes for dumped tables

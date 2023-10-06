@@ -156,16 +156,6 @@ CREATE TABLE `posts` (
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`post_id`, `user_id`, `caption`, `photo_filename`, `post_created`, `visibility`) VALUES
-(51, 275868, 'hi', '64bb4f4d0bf27.png', '2023-07-22 03:38:53', 2),
-(52, 275868, 'asdfdsaf', '64bb5019cfa23.png', '2023-07-22 03:42:17', 2),
-(53, 629873, '', '64bb505473089.png', '2023-07-22 03:43:16', 2),
-(54, 275868, '', '64bb5188f38bf.png', '2023-07-22 03:48:25', 2),
-(55, 629873, 'asdf', '64bb583b9fb9c.png', '2023-07-22 04:16:59', 1),
-(56, 308308, 'adf sdf sdf dsf dsfsdf dsf dsafasdf asdf sadf asfd asf sdf sadfsdfasd f', '64c0d3733f823.jpg', '2023-07-26 08:04:03', 2),
-(57, 629873, 'sdasfd', '64cb4037e7dd2.png', '2023-08-03 05:50:48', 1),
-(58, 629873, 'sdfsdfa', '64cc9fd2d70ab.png', '2023-08-04 06:50:58', 2);
-
 -- --------------------------------------------------------
 
 --

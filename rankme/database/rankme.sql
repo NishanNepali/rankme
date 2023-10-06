@@ -210,11 +210,6 @@ CREATE TABLE `user_photos` (
 -- Dumping data for table `user_photos`
 --
 
-INSERT INTO `user_photos` (`id`, `user_id`, `photo`, `caption`, `created_at`) VALUES
-(67, 877052, 'photo-album/compressed_photo_64b4def48b3c5_2927.png', 'fd', '2023-07-17 06:25:56'),
-(68, 629873, 'photo-album/compressed_photo_64bb5f17b9510_7563.png', '', '2023-07-22 04:46:15'),
-(69, 629873, 'photo-album/compressed_photo_64bb5f1c0c676_2107.png', '', '2023-07-22 04:46:20'),
-(70, 629873, 'photo-album/compressed_photo_64bb5f2095699_2741.png', '', '2023-07-22 04:46:24');
 
 -- --------------------------------------------------------
 

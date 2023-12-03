@@ -5,7 +5,6 @@
 **RankMe** is a feature-rich web platform that enables users to rank themselves based on upvotes and downvotes received on their content. It offers various social networking features, including leaderboards, a messaging system, friend requests, post uploading, post liking, and commenting. Whether you want to see how popular your content is or connect with like-minded individuals, RankMe has you covered.
 
 ## Table of Contents
-
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)

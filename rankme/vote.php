@@ -1,5 +1,5 @@
 <?php
-// Start a session and connect to the database
+// Start a session
 session_start();
 
 require_once('config.php');
